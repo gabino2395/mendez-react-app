@@ -1,0 +1,16 @@
+.cart-icon{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items:center;
+    cursor: pointer;
+    z-index: 1;
+    /* background-color: #000;
+    color: #fff; */
+    font-size: 22px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    padding-right: 50px;
+}
