@@ -11,8 +11,7 @@ const Header = () => {
       <ul>
          <li className='' > <a href="">Home</a></li>
          <li> <a href="">about</a></li>
-         <li> <a href="">services</a></li>
-         <li className='services'> <a href="">team</a></li>
+         <li> <a href="">catalog</a></li>
         
    <CartWidget />
       </ul>
