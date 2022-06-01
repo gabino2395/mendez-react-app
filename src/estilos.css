@@ -1,10 +1,10 @@
-.cart-icon{
+.cart-icon {
     width: 30px;
     height: 30px;
     position: relative;
     display: flex;
     justify-content: left;
-    align-items:center;
+    align-items: center;
     cursor: pointer;
     z-index: 1;
     /* background-color: #000;
@@ -13,4 +13,134 @@
     border-radius: 50%;
     margin-bottom: 20px;
     padding-right: 50px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    background: #000;
+    min-height: 200vh;
+
+}
+
+.imgLogo {
+    width: 50px;
+    height: 50px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+
+header.sticky {
+    box-shadow: 0em 0em 0.5em 0.5em rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+    margin-right: 200px;
+    padding: 5px 100px;
+    background: #fff;
+    width: 100vw;
+    display: flex;
+    align-self: center;
+}
+
+header .logo {
+    font-size: 2em;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    background: url(..//public/img/relax1.png);
+    background-attachment: scroll;
+    background-size: cover;
+    background-color: #000;
+    /* background-size: cover; */
+    /* background-attachment:: */
+
+
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+    color: #000
+}
+
+@media screen and (max-width: 620px) {
+
+    header,
+    header.sticky {
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+    ul {
+        font-size: 10px;
+
+
+
+    }
+    .imgLogo{
+        width: 30px;
+        height: 30px;
+    }
+
+}
+@media screen and (max-width: 350px) {
+   .imgLogo{
+         width: 0px;
+         height: 0px;
+   }
+   
 }

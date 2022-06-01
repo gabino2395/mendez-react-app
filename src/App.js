@@ -1,10 +1,11 @@
+import ItemListContainer from './components/ItemListContainer'
 import Header from "./components/NavBar"
 const App=()=>{
     return (
         <>
-     <Header/>
-        
-      
+     <Header />
+     <br />
+     <ItemListContainer greeting="Sean bienvenidos a mi tienda " />
         </>
     )
     

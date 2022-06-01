@@ -2,9 +2,11 @@
 import React from 'react';
 //traigo la libreria de reactDOM
 import ReactDOM from 'react-dom/client';
-// agarrar una app que ya existia en REACT
+// importo css
 
 import "./estilos.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+// agarrar una app que ya existia en REACT
 import App from './App';
 // const App = ()=> "hola mundo con jsx y arrow function"
 //mostrar la app en el dom
@@ -14,3 +16,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
