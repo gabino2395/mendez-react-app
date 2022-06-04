@@ -1,4 +1,4 @@
-import Navbar from 'react-bootstrap/Navbar'
+
 import CartWidget from "./CartWidget"
 const Header = () => {
 	return (
@@ -21,5 +21,7 @@ const Header = () => {
 		</>
 	)
 }
+
+
 
 export default Header
