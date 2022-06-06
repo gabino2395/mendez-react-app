@@ -30,12 +30,27 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   }
 
   return (
-    <div>
-      <p>El contador va : {contador}</p>
-      <button onClick={aumentarContador}>Aumentar</button>
-      <button onClick={bajarContador}>Disminuir</button>
-      <button onClick={confirmarContador}>Agregar al carrito </button>
+    <div className="item-count">
+    <div className="item-cartCard">
+      <div className="item-cartCount">
+        <button  className="btn "onClick={bajarContador}>
+          <span class="material-symbols-outlined">
+            remove
+          </span></button>
+        <p className="item-CartNumber">  {contador}</p>
+        <button className="btn" onClick={aumentarContador}>
+          <span class="material-symbols-outlined">
+            add
+          </span>
+        </button>
+
+
+      </div>
+      <button className="item-cartConfirm" onClick={confirmarContador}>Agregar al carrito </button>
+    </div>
     </div>
   )
 }
+myDecimal=parseFloat (5.7) ;
+
 export default ItemCount
