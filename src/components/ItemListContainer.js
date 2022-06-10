@@ -1,15 +1,26 @@
+import { traerProductos } from "../utils/productos";
+import ItemList from "./ItemList";
+import { useState, useEffect } from "react";
 
-import ItemCount from "./ItemCount"
 const ItemListContainer = (props) => {
-    return (
-        <div className='titulo'>
-            <h1>{props.greeting}</h1>
-             <ItemCount stock={5} initial={1} onAdd={()=>{alert(
-                 'Se ha agregado un producto al carrito'
-             )}} />
-             
-        </div>
-    )
-}
+  const [products, setProducts] = useState([]);
 
-export default ItemListContainer
+  useEffect(() => {
+    traerProductos()
+      .then((res) => {
+        setProducts(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  return (
+    <div className="titulo">
+      <h1>{props.greeting}</h1>
+      <ItemList items={products} />
+    </div>
+  );
+};
+
+export default ItemListContainer;

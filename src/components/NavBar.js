@@ -9,9 +9,9 @@ const Header = () => {
 					<a href="#" class="logo">Salitre</a> <img className='imgLogo' src="/imgLogo/surfboard.png" alt="imagen de logo" />
 				</div>
 				<ul>
-					<li className='' > <a href="">Home</a></li>
-					<li> <a href="">about</a></li>
-					<li> <a href="">catalog</a></li>
+					<li className='#' > <a href="">Home</a></li>
+					<li> <a href="#">about</a></li>
+					<li> <a href="#">catalog</a></li>
 
 					<CartWidget />
 				</ul>

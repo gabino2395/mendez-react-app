@@ -1,7 +1,7 @@
 //traigo la libreria REACT
 import React from 'react';
 //traigo la libreria de reactDOM
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client'
 // importo css
 
 import "./estilos.scss"

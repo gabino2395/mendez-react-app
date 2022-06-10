@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "public",
+			"path": "."
+		},
+		{
+			"name": "my-app",
+			"path": "../../../Documents/my-app"
+		}
+	],
+	"settings": {}
+}
