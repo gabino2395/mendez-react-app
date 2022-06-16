@@ -1,27 +1,48 @@
+import CartWidget from "./CartWidget";
+import { Link, NavLink } from "react-router-dom";
+const NavBar = () => {
+  return (
+    <>
+      <header className="header">
+        <div>
+          <Link to="#" class="logo">
+            Salitre
+          </Link>
+          <img
+            className="imgLogo"
+            src="/imgLogo/surfboard.png"
+            alt="imagen de logo"
+          />
+        </div>
+        <ul className="header-ul">
+          
+          <li className="header-li">
+            <NavLink to="home" className="href">
+              home
+            </NavLink>
+          </li>
+          <li className="header-li">
+          <NavLink to="category/1" className="href">
+              surfboards
+            </NavLink>
+          </li>
+          <li className="header-li">
+            <NavLink link to="category/2" className="href">
+              t-shirts
+            </NavLink>
+          </li>
+          <li className="header-li">
+            <NavLink to="category/3" className="href">
+              shorts
+            </NavLink>
+          </li>
 
-import CartWidget from "./CartWidget"
-const Header = () => {
-	return (
-		<>
-			<header>
-				<div>
+          <CartWidget />
+        </ul>
+      </header>
+      <section class="banner"></section>
+    </>
+  );
+};
 
-					<a href="#" class="logo">Salitre</a> <img className='imgLogo' src="/imgLogo/surfboard.png" alt="imagen de logo" />
-				</div>
-				<ul>
-					<li className='#' > <a href="">Home</a></li>
-					<li> <a href="#">about</a></li>
-					<li> <a href="#">catalog</a></li>
-
-					<CartWidget />
-				</ul>
-			</header>
-			<section class="banner"></section>
-
-		</>
-	)
-}
-
-
-
-export default Header
+export default NavBar;

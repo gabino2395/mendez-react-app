@@ -1,18 +1,19 @@
-import ItemDetailContainer from './components/ItemDetailContainer'
-import ItemListContainer from './components/ItemListContainer'
-import Header from "./components/NavBar"
-const App=()=>{
-    return (
-        <>
-       
-     <Header />
-     <br />
-     <ItemListContainer greeting="Sean bienvenidos a mi tienda " />
-     <ItemDetailContainer/>
-        </>
-    )
-    
-    
-}
-//mostrar la app en el dom
-export default App
+import NavBar from "./components/NavBar";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import { BrowserRouter } from "react-router-dom";
+const App = () => {
+  return (
+      <>
+    <BrowserRouter>
+      <NavBar />
+
+      {/* <img className="surfboard" src="/imgLogo/pukasBanner3.jpg" alt="" /> */}
+      <Main />
+      <img className="surfboard" src="/imgLogo/pukasBanner1.png" alt="" />
+    </BrowserRouter>
+      </>
+  );
+};
+
+export default App;
