@@ -5,7 +5,7 @@ const NavBar = () => {
     <>
       <header className="header">
         <div>
-          <Link to="#" class="logo">
+          <Link to="/" class="logo">
             Salitre
           </Link>
           <img
@@ -17,7 +17,7 @@ const NavBar = () => {
         <ul className="header-ul">
           
           <li className="header-li">
-            <NavLink to="home" className="href">
+            <NavLink to="/" className="href">
               home
             </NavLink>
           </li>
@@ -27,7 +27,7 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li className="header-li">
-            <NavLink link to="category/2" className="href">
+            <NavLink to="category/2" className="href">
               t-shirts
             </NavLink>
           </li>
@@ -36,8 +36,13 @@ const NavBar = () => {
               shorts
             </NavLink>
           </li>
-
+          <li className="header-li">
+            <NavLink to="/carrito" className="href">
+             
           <CartWidget />
+            </NavLink>
+          </li>
+
         </ul>
       </header>
       <section class="banner"></section>

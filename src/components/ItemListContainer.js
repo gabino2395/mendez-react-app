@@ -1,34 +1,48 @@
-import { traerProductos } from "../utils/productos";
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { traerProductoPorCategoria } from "../utils/productos";
+import { productos } from "../utils/productos";
 const ItemListContainer = (props) => {
 
   const [products, setProducts] = useState([]);
-  const { category } = useParams();
+  const[loading,setLoading]= useState(true)
+  const { categoryId } = useParams();
 
   useEffect(() => {
-if(category){
 
-  traerProductos()
-    .then((res) => {
-      setProducts(res);
-    })}else{traerProductoPorCategoria(parseInt(category))
-      .then((res) => {
-        setProducts(res)});
-     }
+    setLoading(true)
+    new Promise((res, rej) => {
+      setTimeout(() => {
+        
+        res(categoryId ? productos.filter((producto)=>{
 
-      // .catch((error) => {
-      //   console.log(error);
-      // });
-  }, [products]);
+          return producto.categoryId == categoryId
+
+        }) : productos)
+      }, 2000)
+    })
+      .then(resultado => {
+        setProducts(resultado)
+         setLoading(false)
+      })
+      .catch(() => {
+        setProducts([])
+      })
+
+  }, [categoryId])
   return (
+    <>
+    
     <div className="titulo">
       <h1>{props.greeting}</h1>
-      <ItemList items={products} />
+      {
+        loading ? <p>cargando..</p> :< ItemList items={products}/>
+             }
     </div>
-  );
-};
+          <img className="surfboard" src="/imgLogo/pukasBanner1.png" alt="" />
+    </>
 
+  );
+;
+    }
 export default ItemListContainer;

@@ -8,9 +8,7 @@ const App = () => {
     <BrowserRouter>
       <NavBar />
 
-      {/* <img className="surfboard" src="/imgLogo/pukasBanner3.jpg" alt="" /> */}
       <Main />
-      <img className="surfboard" src="/imgLogo/pukasBanner1.png" alt="" />
     </BrowserRouter>
       </>
   );

@@ -30,7 +30,6 @@ const Footer = () => {
 
         </ul>
       </div>
-      {/* <section class="banner"></section> */}
     </>
   )
 }
