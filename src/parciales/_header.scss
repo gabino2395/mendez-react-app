@@ -1,6 +1,6 @@
 .cart-icon {
-    width: 30px;
-    height: 30px;
+     width: 10px;
+      height: 1px;
     position: relative;
     display: flex;
     justify-content: left;
@@ -9,7 +9,7 @@
     z-index: 1;
     /* background-color: #000;
     color: #fff; */
-    font-size: 22px;
+    font-size: 15px;
     border-radius: 50%;
     margin-bottom: 20px;
     padding-right: 50px;
@@ -22,6 +22,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
+}
+.header{
+    align-items: flex-start;
+    
+}
+.header-li{
+    align-items: flex-start;
+
 }
 
 body {
@@ -71,7 +79,6 @@ header .logo {
 
 }
 
-
 .href:hover {
     font-size: 1.2em;
     letter-spacing: 2px;
@@ -81,7 +88,7 @@ header .logo {
 header .header-ul {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -98,6 +105,7 @@ header .header-ul {
     letter-spacing: 2px;
     font-weight: 500px;
     transition: 0.6s;
+    align-items: flex-start
 }
 
 .banner {
@@ -111,8 +119,8 @@ header .header-ul {
     background-color: #000;
     /* background-size: cover; */
     /* background-attachment:: */
-
-
+    
+    
 }
 
 header.sticky .logo,
@@ -121,7 +129,27 @@ header.sticky .header-ul .header-li a {
 }
 
 
-@media screen and (max-width: 620px) {
+@media screen and (min-width: 425px) {
+
+    //  header,
+    //  header.sticky {
+    //      margin-left: 0px;
+    //      display: flex;
+    //      flex-direction: column;
+    //      width: 100vw;
+
+
+    //  }
+     .imgLogo {
+        width: 50px;
+        height: 50px;
+    }
+     .banner{
+         width: 100vw;
+     }
+
+}
+@media screen and (max-width: 820px) {
 
     header,
     header.sticky {
@@ -131,12 +159,31 @@ header.sticky .header-ul .header-li a {
 
 
     }
+    .header-ul {
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+
+
+
+    }
+    .header{
+        align-items: center;
+        
+    }
+   
 
 }
 
 @media screen and (max-width: 390px) {
+    .header{
+        align-items: center;
+        justify-content: center;
+    }
     .header-ul {
-        font-size: 10px;
+        font-size: 8px;
+        align-items: center;
+        justify-content: center;
 
 
 
@@ -156,6 +203,10 @@ header.sticky .header-ul .header-li a {
     .imgLogo {
         width: 0px;
         height: 0px;
+    }
+    .header{
+        align-items: center;
+        justify-content: center;
     }
 
 }

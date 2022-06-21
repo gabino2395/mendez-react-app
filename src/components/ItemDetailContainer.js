@@ -8,10 +8,10 @@ const ItemDetailContainer = () => {
 
 
   const [product, setProduct] = useState({});
-//   const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
   const { id } = useParams();
   useEffect(() => {
-    //   setLoading(true)
+      setLoading(true)
 
 
       new Promise((res, rej) => {
@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
         }, 2000)
       })
         .then(respuesta => {
-        //   setLoading(false)
+           setLoading(false)
           setProduct(respuesta)
         })
   
