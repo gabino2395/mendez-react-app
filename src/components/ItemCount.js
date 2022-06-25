@@ -17,11 +17,13 @@ const ItemCount = ({ stock, initial, OnAdd }) => {
 
   const confirmarContador = () => {
     OnAdd(contador);
+
   };
 
   return (
     <div className="item-count">
       <div className="item-cartCard">
+          <p className="counter-text">cantidad</p>
         <div className="item-cartCount">
           <button className="btn " onClick={bajarContador}>
             <span className="material-symbols-outlined">remove</span>

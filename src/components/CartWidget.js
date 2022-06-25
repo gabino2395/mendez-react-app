@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import React, { useContext } from "react";
 import { useState } from "react";
-import { contexto } from "./cartContext";
+import { contexto } from "../contexto/cartContext";
 
 const CartWidget = () => {
   const resultado = useContext(contexto)
@@ -10,7 +10,7 @@ const CartWidget = () => {
       
         <NavLink to="/carrito" className="href">
         
-          <i className="fa-solid fa-cart-shopping cart-icon">{resultado.cantidad_total}</i>
+          <i className="fa-solid fa-cart-shopping cart-icon">{resultado.totalAmmount }</i>
         </NavLink>
       
     </>
@@ -18,3 +18,5 @@ const CartWidget = () => {
 };
 
 export default CartWidget;
+
+
