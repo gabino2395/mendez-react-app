@@ -4,13 +4,15 @@ import { useState } from "react";
 import { contexto } from "../contexto/cartContext";
 
 const CartWidget = () => {
-  const resultado = useContext(contexto)
+  const {totalAmmount} =  useContext(contexto)
+
+  // const resultado = useContext(contexto)
   return (
     <>
       
         <NavLink to="/carrito" className="href">
-        
-          <i className="fa-solid fa-cart-shopping cart-icon">{resultado.totalAmmount }</i>
+
+          <i className="fa-solid fa-cart-shopping cart-icon"> {totalAmmount() !== 0 && totalAmmount()}</i>
         </NavLink>
       
     </>

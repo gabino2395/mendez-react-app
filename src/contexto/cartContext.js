@@ -8,12 +8,12 @@ const Provider = contexto.Provider;
 export const MiProvider = ({ children }) => {
   const [cartList, setCarTlist] = useState([]);
 
+
+  
+
   const addToCart = (producto,cantidad) => {
     const copia = [...cartList];
-    // const new_Product= {
-    //     ...producto,
-    //     cantidad : cantidad
-    // }
+    
      const new_Product = { ...producto, cantidad };
 
     copia.push(new_Product);
@@ -35,8 +35,9 @@ export const MiProvider = ({ children }) => {
   };
 
   const totalAmmount = () => {
-    return cartList.reduce((count, product) => count + (product.ammount, 0));
-  };
+     return cartList.reduce((count, product) => count + (product.ammount),0);
+
+   };
 
   const totalPrice = () => {
     return cartList.reduce(
@@ -48,6 +49,7 @@ export const MiProvider = ({ children }) => {
   const cleanCart = () => {
     setCarTlist([]);
   };
+
 
   return (
     <Provider
