@@ -2,6 +2,7 @@ import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { productos } from "../utils/productos";
+// import{db} from"..Firebsae/"
 const ItemListContainer = (props) => {
 
   const [products, setProducts] = useState([]);

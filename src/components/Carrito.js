@@ -4,74 +4,86 @@ import { contexto } from "../contexto/cartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 const Carrito = () => {
+ 
   const { cartList, cleanCart, removeProduct, totalPrice, totalAmmount } =
     useContext(contexto);
-
-  // const [nombre, setNombre] = useState("");
-  // const [tel, setTel] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [usuario, setUsuario] = useState({});
-  // const { carrito } = useContext(contexto);
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const usuario = { nombre, tel, email };
-  //   console.log(usuario);
-  // };
-
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  // };
-
-  // const handleNombreChange = (e) => {
-  //   setNombre(e.target.value);
-  // };
-
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
-
-  // const handleTelChange = (e) => {
-  //   setTel(e.target.value);
-  // };
   return (
     <>
       {totalAmmount() !== 0 ? (
         <>
           <h3>Tu Carrito</h3>
-          {cartList.map((product)  => (
-            <>
-              <div className="col-md-3" key={product.id} product={product}>
-                <div className="itemsCartName">{product.name}</div>
-                <p>total:</p>
-                <div className="itemsCart">{product.totalAmmount}</div>
-                <div className="itemsCart">{product.totalPrice} </div>
+          <div className="container">
+            <div className="row cart-form">
+              <div className="col-9 cart-itemsDetails">
+                <ul className="cart-items">
+                  <ul className="cart-item">
+                    <li>item</li>
+                  </ul>
+                  <li>precio</li>
+                  <li>cant.</li>
+                  <li>subtotal</li>
+                </ul>
+                <hr />
+                {cartList.map((product) => (
+                  <ul className="cart-items3" key={product.id}>
+                    <ul className="cart-item"></ul>
+                    <ul className="cart-item3">
+                      <button className="item-cartDelete" onClick={cleanCart}>
+                        <span className="material-symbols-outlined">
+                          delete
+                        </span>
+                      </button>
+                      <li className="cart-item0">${product.price}</li>
+                      <div>
+                        <li>{product.cantidadSeleccionada}</li>
+                      </div>
+                      <li>${product.cantidadSeleccionada * product.price}</li>
+                    </ul>
+
+                    <ul className="cart-FirstSection">
+                      <li>
+                        <img
+                          className="cart-img"
+                          src={product.img}
+                          alt={product.name}
+                        />
+                      </li>
+                    </ul>
+                    <li>{product.name} </li>
+                  </ul>
+                ))}
+                <hr />
               </div>
-            </>
-          ))}
+              <div className="col-3 cart-pay">
+                <p>Resumen</p>
+                <hr />
+                <ul className="cart-items-pay">
+                  <li>sub total</li>
+                  <li>{totalPrice()}</li>
+                </ul>
+                <ul className="cart-items-pay">
+                  <li>impuesto</li>
+                  <li>$0,00</li>
+                </ul>
+                <hr />
+                <div className="final-pay">
+                  <p className="pay">total de pedido $ {totalPrice()}</p>
+                  <Link className="pay-link" to="./chekout">
+                    FINALIZAR PEDIDO
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       ) : (
-        <div>El carrito esta vacio</div>
+        <div className="cartCard">
+          <div>
+            <h3>Tu Carrito</h3>
+            <h4>Tu carrito esta vacio</h4>
+          </div>
+        </div>
       )}
-
-      {/* <form onSubmit={handleSubmit}>
-      <div>
-      {/* <input type="text" id="Nombre" placeholder="nombre.." value={usuario.nombre}/> */}
-      {/* 
-      <input onChange={handleNombreChange} type="text" id="nombre" placeholder="nombre" value={usuario.nombre}/>
-      </div>
-      <div>
-      
-      <input  onChange={handleEmailChange}  type="email" id="email" placeholder="Email..." value={usuario.email}/>
-      
-      </div>
-      <div>
-      <input onChange={handleTelChange} type="number" id="telefono" placeholder="Telefono..."/>
-      </div>
-      <button  >comprar</button>
-    </form> */}
-      {/* <Link to="/checkout">Proceder con la compra</Link>
-  <img className="surfboard" src="/imgLogo/pukasBanner3.jpg" alt="" /> */}
     </>
   );
 };

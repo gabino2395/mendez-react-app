@@ -35,13 +35,13 @@ export const MiProvider = ({ children }) => {
   };
 
   const totalAmmount = () => {
-     return cartList.reduce((count, product) => count + (product.ammount),0);
+     return cartList.reduce((acc,{cantidadSeleccionada}) => acc + cantidadSeleccionada,0);
 
    };
 
   const totalPrice = () => {
     return cartList.reduce(
-      (count, product) => count + product.ammount * product.price,
+      (count, product) => count + product.cantidadSeleccionada * product.price,
       0
     );
   };

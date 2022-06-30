@@ -6,6 +6,8 @@ import { MiProvider } from "./contexto/cartContext";
 const App = () => {
   return (
     <>
+   
+   
       <BrowserRouter>
         <MiProvider>
           <NavBar />
