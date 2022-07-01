@@ -30,7 +30,7 @@ export const MiProvider = ({ children }) => {
   }
 
   const removeProduct = (id) => {
-    const filtered = cartList.filter((product) => product.id !== id);
+    const filtered = cartList.filter(product => product.id !== id);
     setCarTlist([...filtered]);
   };
 

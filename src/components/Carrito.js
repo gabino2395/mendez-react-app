@@ -4,9 +4,11 @@ import { contexto } from "../contexto/cartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 const Carrito = () => {
- 
-  const { cartList, cleanCart, removeProduct, totalPrice, totalAmmount } =
+  const { carrito, cartList, cleanCart, removeProduct, totalPrice, totalAmmount } =
     useContext(contexto);
+  
+ 
+
   return (
     <>
       {totalAmmount() !== 0 ? (
@@ -68,13 +70,14 @@ const Carrito = () => {
                 <hr />
                 <div className="final-pay">
                   <p className="pay">total de pedido $ {totalPrice()}</p>
-                  <Link className="pay-link" to="./chekout">
+                  <Link className="pay-link" to="/checkout">
                     FINALIZAR PEDIDO
                   </Link>
                 </div>
               </div>
             </div>
           </div>
+          
         </>
       ) : (
         <div className="cartCard">
