@@ -20,7 +20,6 @@ const ItemDetail = ({ product }) => {
     addToCart({...product, cantidadSeleccionada})
     
   };
-   console.log(cartList)
 
   return (
 <div className=" detail container">

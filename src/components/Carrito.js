@@ -3,12 +3,64 @@ import { useState } from "react";
 import { contexto } from "../contexto/cartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Checkout from "./Checkout";
+import { db } from "../Firebsae";
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+
 const Carrito = () => {
-  const { carrito, cartList, cleanCart, removeProduct, totalPrice, totalAmmount } =
+  
+
+  const { Carrito, cartList, cleanCart, removeProduct, totalPrice, totalAmmount } =
     useContext(contexto);
+
+ 
+    const [data, setData] = useState({ name: '', email: '', phone: '' });
+    const [orderId, setOrderId] = useState('');
+
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setData({
+            ...data,
+            [name]: value,
+        });
+    }
+    const handleSubmit = (e) => {
+     
+        e.preventDefault();
+
+        const objOrden = {
+            buyer: {
+                name: data.name,
+                phone: data.phone,
+                email: data.email,
+            },
+
+            cartList,
+            total: totalPrice(),
+            date: serverTimestamp(),
+        };
+
+
+        const ref = collection(db, 'orders');
+        addDoc(ref, objOrden)
+        .then((response) => {
+          console.log(response)
+            setOrderId(response.id);
+            cleanCart();
+        })
+        .catch(error=>{
+          console.log(error)
+        })
+    };
+
+    if (orderId !== '') {
+        return <h1>Gracias por tu compra, tu número de envío es: {orderId}</h1>;
+    }
+   
+  
   
  
-
   return (
     <>
       {totalAmmount() !== 0 ? (
@@ -30,7 +82,7 @@ const Carrito = () => {
                   <ul className="cart-items3" key={product.id}>
                     <ul className="cart-item"></ul>
                     <ul className="cart-item3">
-                      <button className="item-cartDelete" onClick={cleanCart}>
+                      <button className="item-cartDelete" key={product.id} onClick={cleanCart}>
                         <span className="material-symbols-outlined">
                           delete
                         </span>
@@ -70,14 +122,15 @@ const Carrito = () => {
                 <hr />
                 <div className="final-pay">
                   <p className="pay">total de pedido $ {totalPrice()}</p>
-                  <Link className="pay-link" to="/checkout">
+                  <button className="pay-link">
                     FINALIZAR PEDIDO
-                  </Link>
+                  </button>
+                  
                 </div>
               </div>
             </div>
           </div>
-          
+
         </>
       ) : (
         <div className="cartCard">
@@ -87,6 +140,11 @@ const Carrito = () => {
           </div>
         </div>
       )}
+      <Checkout
+        handleChange={handleChange}
+        data={data}
+        handleSubmit={handleSubmit}
+         />
     </>
   );
 };
