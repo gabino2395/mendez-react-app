@@ -9,8 +9,7 @@ export const MiProvider = ({ children }) => {
   const [cartList, setCarTlist] = useState([]);
 
 
-  
-
+ 
   const addToCart = (producto,cantidad) => {
     const copia = [...cartList];
     
