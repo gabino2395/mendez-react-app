@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { productos } from "../utils/productos";
 import ItemDetail from "./ItemDetail";
-import { getDoc,doc, collection , query , where } from "firebase/firestore"
+import { getDoc,doc} from "firebase/firestore"
 import { productsCollection } from "../Firebsae";
+import Skeleton from '@mui/material/Skeleton';
+
+import Stack from '@mui/material/Stack';
 const ItemDetailContainer = () => {
 
 
@@ -34,7 +36,14 @@ const ItemDetailContainer = () => {
   return (
 <>
 {
-  loading?<p>cargando..</p>:<ItemDetail product={product} />
+  loading?
+  <Stack spacing={1}>
+        <Skeleton variant="text" />
+        <Skeleton variant="circular" width={40} height={40} />
+        <Skeleton variant="rectangular" width={210} height={118} />
+        <Skeleton variant="rectangular" width={210} height={118} />
+
+      </Stack>:<ItemDetail product={product} />
 }
 </>
 

@@ -2,40 +2,42 @@ import React from "react";
 import { useState } from "react";
 import { contexto } from "../contexto/cartContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
 import { db } from "../Firebsae";
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
+
+
 const Carrito = () => {
 
 
-  const { cartList, cleanCart, removeProduct, totalPrice, totalAmmount, addToCart } =
+
+
+  const { cartList, cleanCart, removeProduct, totalPrice, totalAmmount, addToCart, removeProd } =
     useContext(contexto);
 
 
   const [data, setData] = useState({ name: '', email: '', phone: '' });
   const [orderId, setOrderId] = useState('');
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    let order={}
-    order.buyer=data
-    order.total=totalPrice()
-    order.time=serverTimestamp()
+    let order = {}
+    order.buyer = data
+    order.total = totalPrice()
+    order.time = serverTimestamp()
 
 
-    order.items= cartList.map(cartItem => {
-      //  const id= cartItem.id
-      const name= cartItem.name
-      const price= cartItem.price
-  
-      return{name,price}
-   })
-  
-  
+    order.items = cartList.map(cartItem => {
+      const name = cartItem.name
+      const price = cartItem.price
 
-    
+      return { name, price }
+    })
+
+
+
+
 
 
     const ref = collection(db, 'orders');
@@ -56,8 +58,17 @@ const Carrito = () => {
       [name]: value,
     });
   }
-  if (orderId !== '') {
-    return <h1>Gracias por tu compra, tu número de envío es: {orderId}</h1>;
+  if (orderId && data !== '') {
+    return <>
+      <div className="container final-modal">
+        <div className="row col-6">
+
+
+          <h3>Gracias por tu compra, tu número de envío es: <br />{orderId}</h3>
+        </div>
+      </div>
+    </>
+
   }
 
 
@@ -65,6 +76,7 @@ const Carrito = () => {
 
   return (
     <>
+
       {totalAmmount() !== 0 ? (
         <>
           <h3>Tu Carrito</h3>
@@ -84,7 +96,8 @@ const Carrito = () => {
                   <ul className="cart-items3" key={product.id}>
                     <ul className="cart-item"></ul>
                     <ul className="cart-item3">
-                      <button className="item-cartDelete" key={product.id} onClick={cleanCart}>
+                      <button className="item-cartDelete " onClick={() => removeProd(product.id)}>
+                        {console.log(removeProduct)}
                         <span className="material-symbols-outlined">
                           delete
                         </span>
@@ -124,9 +137,6 @@ const Carrito = () => {
                 <hr />
                 <div className="final-pay">
                   <p className="pay">total de pedido $ {totalPrice()}</p>
-                  <button className="pay-link">
-                    FINALIZAR PEDIDO
-                  </button>
 
                 </div>
               </div>
@@ -147,6 +157,8 @@ const Carrito = () => {
         data={data}
         handleSubmit={handleSubmit}
       />
+      <img className="surfboard" src="/imgLogo/PukasBanner3.jpg" alt="" />
+
     </>
   );
 

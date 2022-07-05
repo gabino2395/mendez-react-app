@@ -6,7 +6,7 @@ const Provider = contexto.Provider;
 //Provider : Es un componente que viene adentro de un contexto y sirve para : 1) Determina quienes tienen acceso a la informacion y 2) Determina el valor del contexto
 
 export const MiProvider = ({ children }) => {
-  const [cartList, setCarTlist] = useState([]);
+  const [cartList, setCartList] = useState([]);
 
 
  
@@ -16,7 +16,7 @@ export const MiProvider = ({ children }) => {
      const new_Product = { ...producto, cantidad };
 
     copia.push(new_Product);
-    setCarTlist(copia);
+    setCartList(copia);
   };
 
   function isInCart(id) {
@@ -29,10 +29,15 @@ export const MiProvider = ({ children }) => {
   }
 
   const removeProduct = (id) => {
-    setCarTlist(cartList.filter((prod) => prod.id !== id));
+    setCartList(cartList.filter((prod) => prod.id !== id));
 
    
   };
+  const removeProd = (id) => {
+    const filtrados = cartList.filter(prod => prod.id !== id )
+      setCartList([...filtrados])
+      
+  }
 
   const totalAmmount = () => {
      return cartList.reduce((acc,{cantidadSeleccionada}) => acc + cantidadSeleccionada,0);
@@ -47,13 +52,14 @@ export const MiProvider = ({ children }) => {
   };
 
   const cleanCart = () => {
-    setCarTlist([]);
+    setCartList([]);
   };
 
 
   return (
     <Provider
       value={{
+        removeProd ,
         cartList,
         isInCart,
         addToCart,

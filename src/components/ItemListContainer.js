@@ -1,8 +1,9 @@
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { productos } from "../utils/productos";
+import Skeleton from '@mui/material/Skeleton';
 
+import Stack from '@mui/material/Stack';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,20 +30,20 @@ const ItemListContainer = (props) => {
     getDocs(ref)
       .then((resultado) => {
         const productsFromMap = resultado.docs.map((doc) => {
-           return{
+          return {
             id: doc.id,
             ...doc.data()
-               }
-         
+          }
+
         })
-  setProducts(productsFromMap)
-  setLoading(false)
-})
-      .catch ((error) => {
-  if (error) {
-    toast("API ERROR", { className: "error-toast", draggable: true })
-  }
-})
+        setProducts(productsFromMap)
+        setLoading(false)
+      })
+      .catch((error) => {
+        if (error) {
+          toast("API ERROR", { className: "error-toast", draggable: true })
+        }
+      })
 
   }, [categoryId])
 
@@ -50,22 +51,29 @@ const ItemListContainer = (props) => {
 
 
 
-  
 
-return (
-  <>
 
-    <ToastContainer />
-    <div className="titulo">
-      <h1>{props.greeting}</h1>
-      {
-        loading ? <p>cargando..</p> : < ItemList items={products} />
-      }
-    </div>
-    <img className="surfboard" src="/imgLogo/pukasBanner1.png" alt="" />
-  </>
+  return (
+    <>
 
-);
-;
+      <ToastContainer />
+      <div className="titulo">
+        <h1>{props.greeting}</h1>
+        {
+          loading ? <Stack spacing={1}>
+            <Skeleton variant="text" />
+            <Skeleton variant="circular" width={40} height={40} />
+            <Skeleton variant="rectangular" width={210} height={118} />
+            <Skeleton variant="rectangular" width={210} height={118} />
+
+          </Stack>
+            : < ItemList items={products} />
+        }
+      </div>
+      <img className="surfboard" src="/imgLogo/pukasBanner1.png" alt="" />
+    </>
+
+  );
+  ;
 }
 export default ItemListContainer;

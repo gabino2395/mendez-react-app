@@ -38,9 +38,9 @@
 
 .cart-item3 {
     display: flex;
-     flex-wrap: row;
-   
- justify-content: space-between;
+    flex-wrap: row;
+
+    justify-content: space-between;
     list-style: none;
 }
 
@@ -135,7 +135,7 @@
 
     }
 
-  
+
 
     .cart-form {
         font-size: 10px;
@@ -156,10 +156,8 @@
         height: 65px;
         width: 65px;
     }
-    .col-3{
-        width: 50%;
-    }
 
+   
     .cart-items-pay {
         font-size: 1.3ch;
         align-items: center;
@@ -179,9 +177,11 @@
         font-size: 9px;
     }
 
-    // .col-4 {
-    //     flex: 0 0 auto;
-    //     width: 60%;
-    // }
+    .col-3 {
+        width: 50%;
+        font-size: smaller;
+    }
+
+  
 
 }

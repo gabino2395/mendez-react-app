@@ -21,24 +21,24 @@ const NavBar = () => {
             </NavLink>
           </li>
 
-   
-   
+
+
           <ul className="header-li header-ul">
-          <li className="header-li">
-          <NavLink to="category/1" className="href">
-              surfboards
-            </NavLink>
-          </li>
-          <li className="header-li">
-            <NavLink to="category/2" className="href">
-              t-shirts
-            </NavLink>
-          </li>
-          <li className="header-li">
-            <NavLink to="category/3" className="href">
-              shorts
-            </NavLink>
-          </li>
+            <li className="header-li">
+              <NavLink to="category/1" className="href">
+                surfboards
+              </NavLink>
+            </li>
+            <li className="header-li">
+              <NavLink to="category/2" className="href">
+                t-shirts
+              </NavLink>
+            </li>
+            <li className="header-li">
+              <NavLink to="category/3" className="href">
+                shorts
+              </NavLink>
+            </li>
           </ul>
 
 

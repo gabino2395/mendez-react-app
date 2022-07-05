@@ -5,10 +5,11 @@ const Item = ({ item }) => {
   return (
     
       <div className='itemsList'>
-          <img width="200px" src={item.img} alt="producto" />
+        <Link className='btn ' to={`/detail/${item.id}`} >
+          <img  height ="250px" width="200px" src={item.img} alt="producto" />
           <h2>{item.name}</h2>
           <p>${item.price}</p>
-          <Link className='btn btn-primary' to={`/detail/${item.id}`}>ver detalle</Link>
+          </Link>
       </div>
 
 
