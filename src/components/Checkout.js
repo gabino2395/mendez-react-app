@@ -9,9 +9,11 @@ const Checkout = ({ handleChange, data, handleSubmit }) => {
 
         <div className="form">
             <form onSubmit={handleSubmit}>
-                
+
 
                 <input
+                    required
+
                     placeholder="Nombre"
                     type="text"
                     name="name"
@@ -21,36 +23,39 @@ const Checkout = ({ handleChange, data, handleSubmit }) => {
                 <input
                     placeholder="Apellido"
                     type="text"
-                    name="name"
+                    name="apellido"
                     onChange={handleChange}
-                    value={data.name}
+                    value={data.apellido}
                 />
 
 
                 <input
                     placeholder="DNI *"
                     type="number"
-                    name="number"
+                    name="dni"
                     onChange={handleChange}
-                    value={data.email}
+                    value={data.dni}
                 />
-               
-                 <input
+
+                <input
                     placeholder="Ciudad *"
-                    type="text"
-                    name="name"
+                    type="text"  
+                    name="ciudad"
                     onChange={handleChange}
-                    value={data.name}
+
+
+                    value={data.ciudad}
                 />
                 <input
                     placeholder="Calle *"
                     type="text"
-                    name="name"
+                    name="calle"
                     onChange={handleChange}
-                    value={data.name}
+                    value={data.calle}
                 />
 
                 <input
+                    required
                     placeholder="Email"
                     type="text"
                     name="email"
@@ -64,7 +69,7 @@ const Checkout = ({ handleChange, data, handleSubmit }) => {
                     onChange={handleChange}
                     value={data.phone}
                 />
-                
+
 
                 <button className='confirm-btn btn-continuar '>Finalizar compra</button>
 

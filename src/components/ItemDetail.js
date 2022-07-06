@@ -41,7 +41,7 @@ const ItemDetail = ({ product }) => {
           <NavLink className="btn-confirmar" to="/carrito">
             confirmar
           </NavLink>
-          <NavLink className="btn-continuar" to="/">
+          <NavLink className="btn-continuar" to="/List">
             Seguir comprando
           </NavLink>
         </div>

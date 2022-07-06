@@ -17,7 +17,7 @@ const Carrito = () => {
     useContext(contexto);
 
 
-  const [data, setData] = useState({ name: '', email: '', phone: '' });
+  const [data, setData] = useState({ name: '', apellido: '' , email: '', phone: '' ,calle: '' ,ciudad:'' ,dni: ''});
   const [orderId, setOrderId] = useState('');
 
   const handleSubmit = (e) => {
@@ -64,7 +64,7 @@ const Carrito = () => {
         <div className="row col-6">
 
 
-          <h3>Gracias por tu compra, tu número de envío es: <br />{orderId}</h3>
+          <h3 className="final-modal-text">Gracias por tu compra, tu número de envío es: <br />{orderId}</h3>
         </div>
       </div>
     </>

@@ -23,7 +23,8 @@ Para la creacion de este proyecto se utilizo:
 - [Sweetalert2]Para alertas 
 - [React-tostify] Para alertas 
 - [Bootstrap] Para estilos de grillas
-- [Material-UI] 
+- [Material-UI] Para loader de skeleton
+- [React-player] Para videos 
 - [SASS]Para organizacion de css y maquetacion
 Se puede ver el proyecto andando aca:[ReactDoge].
 

@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <>
-    <div className="footer">
+    <footer className="footer">
         <div>
           <a href="#" class="logo">
           <img
@@ -15,21 +15,17 @@ const Footer = () => {
           
         </div>
         <ul className="footer-ul">
+          
           <li className="footer-li">
             
-            <a href=""> <i className="fa-solid fa-cart-shopping cart-icon"></i></a>
           </li>
           <li className="footer-li">
             
-            <a href="#"> <i className="fa-solid fa-cart-shopping cart-icon"></i></a>
-          </li>
-          <li className="footer-li">
-            
-            <a href="#">catalog</a>
+            <Link to="/List"className='catalog' href="#">catalog</Link>
           </li>
 
         </ul>
-      </div>
+      </footer>
     </>
   )
 }

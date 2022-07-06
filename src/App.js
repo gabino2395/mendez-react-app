@@ -13,6 +13,11 @@ const App = () => {
           <NavBar />
 
           <Main />
+
+          <Footer/>
+          
+
+          
         </MiProvider>
       </BrowserRouter>
     </>
