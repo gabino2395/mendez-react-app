@@ -1,16 +1,19 @@
 import React from "react";
 import ItemCount from "./ItemCount";
+//hooks
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { contexto } from "../contexto/cartContext";
 import { useContext } from "react";
+//provider
+import { contexto } from "../contexto/cartContext";
+//router-dom
+import { NavLink } from "react-router-dom";
 
 
 
 const ItemDetail = ({ product }) => {
 
 
-  const { addToCart, cartList } = useContext(contexto)
+  const { addToCart} = useContext(contexto)
 
   const [quantity, setQuantity] = useState(0);
   const OnAdd = (cantidadSeleccionada) => {

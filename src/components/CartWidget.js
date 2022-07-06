@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
 import React, { useContext } from "react";
-import { useState } from "react";
+// router-dom
+import { NavLink } from "react-router-dom";
+//provider
 import { contexto } from "../contexto/cartContext";
 
 const CartWidget = () => {
   const {totalAmmount} =  useContext(contexto)
 
-  // const resultado = useContext(contexto)
   return (
     <>
       

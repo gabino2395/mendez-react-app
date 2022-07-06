@@ -1,8 +1,12 @@
 import React from "react";
-import { useState } from "react";
-import { contexto } from "../contexto/cartContext";
-import { useContext } from "react";
 import Checkout from "./Checkout";
+//provider
+import { contexto } from "../contexto/cartContext";
+//hooks
+import { useState } from "react";
+import { useContext } from "react";
+
+//firebase
 import { db } from "../Firebsae";
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
@@ -13,7 +17,7 @@ const Carrito = () => {
 
 
 
-  const { cartList, cleanCart, removeProduct, totalPrice, totalAmmount, addToCart, removeProd } =
+  const { cartList, cleanCart, removeProduct, totalPrice, totalAmmount, removeProd } =
     useContext(contexto);
 
 

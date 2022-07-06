@@ -4,6 +4,7 @@ import Carrito from "./Carrito";
 import Checkout from "./Checkout";
 import ItemDetailContainer from "./ItemDetailContainer";
 import Home from "./Home";
+//router-dom
 import { Routes, Route } from "react-router-dom";
 const Main = () => {
   return (

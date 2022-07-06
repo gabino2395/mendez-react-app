@@ -1,11 +1,16 @@
+//hooks
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+//firebase
 import { getDoc,doc} from "firebase/firestore"
 import { productsCollection } from "../Firebsae";
+//styles
 import Skeleton from '@mui/material/Skeleton';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Stack from '@mui/material/Stack';
+
 const ItemDetailContainer = () => {
 
 
@@ -27,14 +32,18 @@ const ItemDetailContainer = () => {
      setProduct(productDetail)
      setLoading(false)
     })
-    .catch((error)=>{
-     console.log(error)
+    .catch((error) => {
+      if (error) {
+        toast("API ERROR", { className: "error-toast", draggable: true })
+      }
     })
     },[id])
 
 
   return (
 <>
+<ToastContainer />
+
 {
   loading?
   <Stack spacing={1}>

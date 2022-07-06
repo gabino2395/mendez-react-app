@@ -1,21 +1,19 @@
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+//styles
 import Skeleton from '@mui/material/Skeleton';
-
 import Stack from '@mui/material/Stack';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-// getDocs nos sirve para traer varios documentos de una collection(tabla)
-// getDoc sirve para traer un documento en base a su id
-// doc: referencia a un documento de collection
-// query se utiliza para filtrar
-//where espicifica donde queremos hacer el filter
-import { getDocs, collection, query, where } from "firebase/firestore"
+//firebase
+import { getDocs,  query, where } from "firebase/firestore"
 import { productsCollection } from "../Firebsae";
+
+
 const ItemListContainer = (props) => {
 
   const [products, setProducts] = useState([]);

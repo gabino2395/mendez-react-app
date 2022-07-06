@@ -3,7 +3,6 @@ import { createContext, useState } from "react";
 export const contexto = createContext();
 
 const Provider = contexto.Provider;
-//Provider : Es un componente que viene adentro de un contexto y sirve para : 1) Determina quienes tienen acceso a la informacion y 2) Determina el valor del contexto
 
 export const MiProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);

@@ -14,7 +14,6 @@ const ItemList = ({ items }) => {
     <Item key={item.id} item={item} />
   ))}
 </div>
-        {/* <img className="surfboard" src="/imgLogo/pukasBanner1.png" alt="" /> */}
 
 </>
   );
