@@ -26,9 +26,11 @@ Para la creacion de este proyecto se utilizo:
 - [Material-UI] Para loader de skeleton
 - [React-player] Para videos 
 - [SASS]Para organizacion de css y maquetacion
+- [Firebase] Para base de datos
+
 Se puede ver el proyecto andando aca:[ReactDoge].
 
 
-
+[video de vista de usuario]
   
    
