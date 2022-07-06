@@ -28,9 +28,10 @@ Para la creacion de este proyecto se utilizo:
 - [SASS]Para organizacion de css y maquetacion
 - [Firebase] Para base de datos
 
-Se puede ver el proyecto andando aca:[ReactDoge].
+Se puede ver el proyecto aqui:
 
+[Salitre](https://salitre.netlify.app)
 
-[video de vista de usuario]
+[video de vista de usuario](https://drive.google.com/file/d/1Yy--cBpXTm8xJb7obTur5ZXUpl4VfTb4/view?usp=sharing)
   
    
